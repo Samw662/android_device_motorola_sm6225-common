@@ -1,8 +1,10 @@
 #
-# Copyright (C) 2022-2023 The LineageOS Project
-#
+# SPDX-FileCopyrightText: 2022-2024 The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 #
+
+# Add common definitions for Qualcomm
+$(call inherit-product, hardware/qcom-caf/common/common.mk)
 
 # A/B
 AB_OTA_UPDATER := true
@@ -63,6 +65,7 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.3-impl
 
 PRODUCT_PACKAGES += \
+    firmware_aw_cali.bin_symlink \
     liba2dpoffload \
     libbatterylistener \
     libcomprcapture \
@@ -170,10 +173,6 @@ PRODUCT_PACKAGES += \
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
-
-# Filesystem
-PRODUCT_PACKAGES += \
-    fs_config_files
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -355,6 +354,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
     $(LOCAL_PATH)/configs/public.libraries.system_ext-qti.txt:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/public.libraries-qti.txt
 
+# RFS MSM MPSS symlinks
+PRODUCT_PACKAGES += \
+    rfs_msm_mpss_readonly_vendor_fsg_symlink
+
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.5.vendor \
@@ -365,12 +368,13 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-3.9.1-vendorcompat \
     libprotobuf-cpp-lite-3.9.1-vendorcompat \
     librmnetctl \
+    libsqlite.vendor:64 \
+    libsysutils.vendor:64 \
     libxml2
 
 # Rootdir
 PRODUCT_PACKAGES += \
     init.class_main.sh \
-    init.mdm.sh \
     init.mmi.boot.sh \
     init.mmi.laser.sh \
     init.mmi.touch.sh \
@@ -385,7 +389,6 @@ PRODUCT_PACKAGES += \
     init.mmi.dalvik.rc \
     init.mmi.debug.rc \
     init.mmi.rc \
-    init.qcom.factory.rc \
     init.qcom.rc \
     init.recovery.qcom.rc \
     init.target.rc \
@@ -458,6 +461,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     WifiResCommonOverlay
+
+# WiFi firmware symlinks
+PRODUCT_PACKAGES += \
+    firmware_wlan_mac.bin_symlink \
+    firmware_WCNSS_qcom_cfg.ini_symlink
 
 # Wifi - Configs
 PRODUCT_COPY_FILES += \
