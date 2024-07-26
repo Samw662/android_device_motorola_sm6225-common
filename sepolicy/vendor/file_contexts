@@ -83,3 +83,6 @@
 /(vendor|system/vendor)/bin/init\.oem\.fingerprint\.sh          u:object_r:vendor_init_fingerprint_exec:s0
 /(vendor|system/vendor)/bin/init\.oem\.fingerprint2\.sh         u:object_r:vendor_init_fingerprint_exec:s0
 /(vendor|system/vendor)/bin/init\.oem\.hw\.sh                   u:object_r:vendor_init_hw_exec:s0
+
+# Label read_ahead_kb in /data partition
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/queue/read_ahead_kb u:object_r:vendor_sysfs_scsi_host:s0
