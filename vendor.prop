@@ -221,6 +221,7 @@ persist.vendor.sensors.support_direct_channel=false
 ro.vendor.sensors.glance_approach=false
 ro.vendor.sensors.mot_ltv=true
 ro.vendor.sensors.pug=false
+persist.vendor.sensors.debug.hal=0
 
 # USB
 vendor.usb.controller=4e00000.dwc3
@@ -242,3 +243,4 @@ ro.vendor.zram.swapon=true
 
 # Zygote
 zygote.critical_window.minute=10
+
