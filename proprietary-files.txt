@@ -1,4 +1,11 @@
-# All unpinned blobs below are extracted from devon_g T2SNS33.73-22-3-7
+# All unpinned blobs below are extracted from devon_g T2SNS33.73-22-3-10
+
+# Current blobs with ELF checks disabled:
+# libcne, libwqe, lowi-server, mutualex depend on libwpa_client, which is a gnu makefile target
+# libmdmcutback depends on libqsap_sdk, which is a gnu makefile target
+# libmotext_inf, libril-qcril-hook-oem depend on libril, which is a gnu makefile target
+# libqti-perfd depends on libthermalclient, which is device specific
+# vendor.qti.hardware.camera.postproc@1.0-service-impl depends on libofflinelog, which is device specific
 
 # Current blobs with ELF checks disabled:
 # libcne, libwqe, lowi-server, mutualex depend on libwpa_client, which is a gnu makefile target
